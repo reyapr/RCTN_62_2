@@ -150,3 +150,104 @@ console.log(showTextArrwFnWithReturn(), 'showTextArrwFn')
 console.log('------------------------------------------------------')
 
 
+// setTimeout(() => {
+//   console.log('triggered after 2 seconds')
+// }, 2000)
+
+// Destructuring Array
+
+names = ['Udin', 'Sedunia', 'Jakarta']
+
+const firstName = names[0]
+const lastName = names[1]
+const address = names[2]
+
+let [_, lastName1, address1] = names
+
+console.log(lastName1, address1, 'destructuring')
+
+
+let myProps = {
+  firstName: 'Udin',
+  myLastName: 'Sedunia',
+  myAddress: 'Jakarta'
+}
+
+let { myLastName, firstName: myFirstName } = myProps
+console.log('myLastName: ', myLastName)
+console.log('myFirstName: ', myFirstName)
+
+
+const getUser = () => {
+  return ['John', 'Doe']
+}
+const [johnFirstName, johnLastName] = getUser()
+
+console.log('johnFirstName: ', johnFirstName)
+console.log('johnLastName: ', johnLastName)
+console.log('------------------------------------------------------')
+
+
+// This Keyword
+
+console.log(this, 'this')
+
+let counter = {
+  val: 0,
+  increment: function() {
+    this.val += 1
+    console.log(this)
+  }
+}
+
+console.log(counter.val, 'before increment')
+counter.increment()
+console.log(counter.val, 'after increment')
+
+
+console.log('------------------------------------------------------')
+function thisOnNormalFn() {
+  console.log(this, 'thisOnNormalFn')
+}
+
+const thisOnArrowFn = () => {
+  console.log(this, 'thisOnArrowFunction')
+}
+
+thisOnNormalFn()
+thisOnArrowFn()
+console.log('------------------------------------------------------')
+
+function CounterNormalFn() {
+  this.val = 0
+  
+  setTimeout(function() {
+    this.val++
+    console.log(this)
+  }, 1000);
+}
+
+function CounterArrowFn() {
+  this.val = 0
+  
+  setTimeout(() => {
+    this.val ++
+    console.log(this)
+  })
+}
+
+const counterArrowFnCl = () => {
+  this.val = 0
+  
+  setTimeout(() => {
+    this.val++
+    console.log(this, 'arrow under arrow fn')
+  })
+}
+
+// const resNormal = new CounterNormalFn()
+// const arrwNormal = new CounterArrowFn()
+counterArrowFnCl()
+
+console.log(this, 'global this on sesi-2.js')
+console.log('------------------------------------------------------')
