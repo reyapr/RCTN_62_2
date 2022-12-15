@@ -247,7 +247,60 @@ const counterArrowFnCl = () => {
 
 // const resNormal = new CounterNormalFn()
 // const arrwNormal = new CounterArrowFn()
-counterArrowFnCl()
+// counterArrowFnCl()
 
 console.log(this, 'global this on sesi-2.js')
 console.log('------------------------------------------------------')
+
+// Higher Order Function
+
+let animals = [
+  {name: 'fluffy', species: 'cat'},
+  {name: 'carlo', species: 'cat'},
+  {name: 'sweety', species: 'fish'},
+  {name: 'bruno', species: 'dog'}
+]
+
+let modifiedNames = []
+
+for (let i = 0; i < animals.length; i++) {
+  modifiedNames.push(animals[i].name + '-' + animals[i].species)
+}
+
+
+let modifiedNames1 = animals.map((animal) => {
+  return `${animal.name}-${animal.species}`
+})
+
+// const mapFn = (arr, cb) => {
+//   let res = []
+//   for (let i=0;i<arr.length;i++) {
+//     res.push(cb(arr[i]))
+//   }
+//   return res
+// }
+
+// let resCustomMap = mapFn(animals, (animal) => {
+//   return `${animal.name}-${animal.species}`
+// })
+
+let cats = animals.filter((animal) => animal.species === 'cat')
+
+
+console.log(modifiedNames, 'modifiedNames')
+console.log(modifiedNames1, 'modifiedNames1')
+console.log(cats, 'cats')
+// console.log(resCustomMap, 'resCustomMap')
+
+
+let orders = [
+  {total: 100},
+  {total: 200},
+  {total: 300}
+]
+
+let total = orders.reduce((prevData, order) => {
+  return order.total + prevData
+}, 0)
+
+console.log(total)
