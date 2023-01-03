@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorMessage from './ErrorMessage'
 
 class Username extends React.Component {
   constructor() {
@@ -22,14 +23,22 @@ class Username extends React.Component {
     console.log('after:', this)
   }
   
+  
   render() {
-    console.log('render')
+    const isUdinInclude11 = this.state.username.includes('11')
     return (
       <div className="App">
         <div>
           <p>{this.getUsername()}</p>
         </div>
         <button onClick={this.setUsername}>Set Username</button>
+        {
+          isUdinInclude11 && 
+            <ErrorMessage
+              errMessage={"udin include 11"}
+              errColor="red"
+            />
+        }
       </div>
     );
   }
