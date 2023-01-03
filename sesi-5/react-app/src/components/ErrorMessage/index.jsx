@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 class ErrorCounter extends React.Component {
   render() {
@@ -10,11 +11,16 @@ class ErrorCounter extends React.Component {
             marginTop: '10px'
           }}
         >
-          {this.props.errMessage}
+          {this.props.errMessage.slice(0, 8) + '...'}
         </div>
       </>
     )
   }
+}
+
+ErrorCounter.propTypes = {
+  errMessage: PropTypes.string,
+  showFn: PropTypes.func.isRequired
 }
 
 export default ErrorCounter
