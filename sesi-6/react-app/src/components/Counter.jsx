@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const Counter = () => {
@@ -22,6 +22,13 @@ const Counter = () => {
     // setState((prevState) => prevState + 1)
     setState(state + num)
   }
+  
+  useEffect(() => {
+    console.log('inside use effect')
+    setTimeout(() => {
+      document.querySelector('h3').innerHTML = 'Updated from Counter useEffect'
+    }, 2000);
+  })
   
   // console.log('person:', person)
   
