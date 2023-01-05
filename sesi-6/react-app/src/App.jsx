@@ -3,6 +3,7 @@ import './App.css';
 import TitleClass from './components/TitleC';
 import TitleFn from './components/TitleFn';
 import Counter from './components/Counter';
+import User from './components/User';
 
 function Header() {
   
@@ -72,6 +73,8 @@ function App() {
         <hr />
         <h3>Counter on Functional Component Using Hooks</h3>
         <Counter/>
+        <hr />
+        <User/>
     </div>
   );
 }
