@@ -4,6 +4,7 @@ import Counter1 from './components/Counter1';
 import Counter2 from './components/Counter2';
 import ErrorBoundary from './components/ErrorBoundary';
 import Users from './components/Users';
+import UsersFn from './components/UsersFn';
 
 class App extends React.Component {
   constructor() {
@@ -67,6 +68,9 @@ class App extends React.Component {
             :
             <Users/>
           }
+          <hr />
+          <h1>Users Fn</h1>
+          { !this.state.hideUsers && <UsersFn/> }
         </div>
       </ErrorBoundary>
     );

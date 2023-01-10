@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import User from './UserFn';
 
 class Users extends React.Component {
   constructor() {
@@ -76,10 +77,7 @@ class Users extends React.Component {
             <div style={
               { width: '50%', borderRight: '1px solid'}}
             >
-              <div>Name: {user.name}</div>
-              <div>Username: {user.username}</div>
-              <div>Email: {user.email}</div>
-              <div>Phone: {user.phone}</div>
+              <User user={user}/>
             </div>
             <div>
               {
