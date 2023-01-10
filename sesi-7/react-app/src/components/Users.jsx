@@ -7,15 +7,19 @@ class Users extends React.Component {
     this.state = {
       users: []
     }
+  }
+  
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.users.length != this.state.users.length) {
+      return true
+    }
     
-    this.setState({
-      users: 'test'
-    })
+    return false
   }
   
   componentDidMount() {
     // fetch data from an api
-    console.log(this.state.users, 'did mount')
+    console.log(this.state.users, 'users did mount')
     const users = [
       {name: 'udin'},
       {name: 'bambang'}
@@ -28,7 +32,7 @@ class Users extends React.Component {
   }
   
   render() {
-    console.log('render called')
+    console.log(`%c render Users`, 'color: #9BAC59')
     return (
       <>
         {
