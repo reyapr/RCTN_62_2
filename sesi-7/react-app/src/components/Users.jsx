@@ -28,6 +28,12 @@ class Users extends React.Component {
   //   return false
   // }
   
+  componentWillUnmount() {
+    console.log('unmount')
+    localStorage.removeItem('user')
+  }
+  
+  
   componentDidUpdate(_, prevState) {
     console.log('did update')
     if(prevState.userId !== this.state.userId) {
@@ -36,6 +42,7 @@ class Users extends React.Component {
         this.setState({
           user: res.data
         })
+        localStorage.setItem('user', JSON.stringify(res.data))
       })
     }
   }
@@ -58,6 +65,7 @@ class Users extends React.Component {
     console.log('%c users', 'color: #9BAC59', this.state)
     console.log(`%c render Users`, 'color: #9BAC59')
     const user = this.state.user
+    // const test = this.state.userId.includes('test')
     return (
       <>
         {

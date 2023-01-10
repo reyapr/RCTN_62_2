@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Counter1 from './components/Counter1';
 import Counter2 from './components/Counter2';
+import ErrorBoundary from './components/ErrorBoundary';
 import Users from './components/Users';
 
 class App extends React.Component {
@@ -9,7 +10,8 @@ class App extends React.Component {
     super()
     this.state = {
       num1: 0,
-      num2: 0
+      num2: 0,
+      hideUsers: false
     }
   }
   
@@ -35,18 +37,38 @@ class App extends React.Component {
     num2: ${this.state.num2}
     render App`, 'color: #7759AC')
     return (
-      <div className="App">
-        <Counter1 
-          num={this.state.num1} 
-          setNum={this.setNum1}
-        />
-        <Counter2
-          num={this.state.num2}
-          setNum={this.setNum2}
-        />
-        <hr />
-        <Users/>
-      </div>
+      <ErrorBoundary>
+        <div className="App">
+          <Counter1 
+            num={this.state.num1} 
+            setNum={this.setNum1}
+          />
+          <Counter2
+            num={this.state.num2}
+            setNum={this.setNum2}
+          />
+          <hr />
+          <button
+          onClick={() => {
+            this.setState({
+              hideUsers: !this.state.hideUsers
+            })
+          }}
+          >{
+            this.state.hideUsers ?
+            'show'
+            :
+            'hide'
+            }
+          </button>
+          {
+            this.state.hideUsers ? 
+            null
+            :
+            <Users/>
+          }
+        </div>
+      </ErrorBoundary>
     );
   }
 }
