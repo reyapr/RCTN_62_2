@@ -1,6 +1,7 @@
 import './styles.css'
 import styled from 'styled-components'
 import { useState } from 'react'
+import Button from '@mui/material/Button'
 
 const blue = 'violet'
 const CounterMessageT = styled.div`
@@ -35,8 +36,17 @@ const Counter = () => {
         My Counter
       </CounterMessageO>
       <div>{counter}</div>
-      <button onClick={() => updateCounter(-1)} >-</button> {' '}
-      <button onClick={() => updateCounter(1)}>+</button>
+      <Button 
+        onClick={() => updateCounter(-1)}
+        variant='outlined'
+        color='error'
+        classes={{ borderRadius: '10px'}}
+      >-</Button> {' '}
+      <Button 
+        onClick={() => updateCounter(1)}
+        variant='outlined'
+        color='success'
+      >+</Button>
     </div>
   )
 }
