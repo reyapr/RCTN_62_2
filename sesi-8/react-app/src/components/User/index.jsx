@@ -9,14 +9,14 @@ const titleStyle = {
 
 const User = () => {
   return (
-    <>
-      <div style={titleStyle}>
+    <div class="border-bottom border-dark border-5">
+      <div class="bg-warning py-1">
         My First React App
       </div>
       <div className={styles.title} style={greyColor}>
         User
       </div>
-    </>
+    </div>
   )
 }
 
