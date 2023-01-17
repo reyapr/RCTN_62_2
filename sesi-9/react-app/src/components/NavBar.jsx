@@ -8,7 +8,9 @@ const NavBar = () => {
       paddingBottom: '5px'
     }}>
       <Link style={{ textDecoration: 'none'}} to={HOME_PAGE}>Home</Link> | {' '}
-      <Link style={{ textDecoration: 'none'}} to={ABOUT_PAGE}>About</Link>
+      <Link style={{ textDecoration: 'none'}} to={ABOUT_PAGE}>About</Link> | {' '}
+      <Link style={{ textDecoration: 'none'}} to={'/users'}>Users</Link> | {' '}
+      <Link style={{ textDecoration: 'none'}} to={'/members'}>Members</Link>
       {/* <a href="/">Home</a> | <a href="/about">About</a> */}
     </nav>
   )  
