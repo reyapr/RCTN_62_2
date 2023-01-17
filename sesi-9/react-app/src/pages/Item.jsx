@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import items from '../constant/items'
 import axios from 'axios'
 import { VALORANT_WEAPONS_URL } from "../constant/api"
 
@@ -17,7 +16,6 @@ const Item = () => {
       })
   }, [params.itemId])
   
-  console.log(weapon,'weapon')
   
   return (
     <div>

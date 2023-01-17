@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import items from '../constant/items'
 import axios from 'axios'
 import { VALORANT_WEAPONS_URL } from '../constant/api'
 
