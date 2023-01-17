@@ -1,0 +1,1 @@
+export const VALORANT_WEAPONS_URL = 'https://valorant-api.com/v1/weapons'

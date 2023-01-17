@@ -11,6 +11,8 @@ import Users from './pages/Users';
 import UserDetails from './pages/UserDetails';
 import Members from './pages/Members';
 import Member from './pages/Member';
+import Items from './pages/Items';
+import Item from './pages/Item';
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
         <Route path='/users/:userId' element={<UserDetails/>}/>
         <Route path='/members' element={<Members/>}>
           <Route path=':memberId' element={<Member/>}/>
+        </Route>
+        <Route path='/items' element={<Items/>}>
+          <Route path=':itemId' element={<Item/>}/>
         </Route>
       </Routes>
     </div>

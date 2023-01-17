@@ -10,7 +10,8 @@ const NavBar = () => {
       <Link style={{ textDecoration: 'none'}} to={HOME_PAGE}>Home</Link> | {' '}
       <Link style={{ textDecoration: 'none'}} to={ABOUT_PAGE}>About</Link> | {' '}
       <Link style={{ textDecoration: 'none'}} to={'/users'}>Users</Link> | {' '}
-      <Link style={{ textDecoration: 'none'}} to={'/members'}>Members</Link>
+      <Link style={{ textDecoration: 'none'}} to={'/members'}>Members</Link> | {' '}
+      <Link style={{ textDecoration: 'none'}} to={'/items'}>Items</Link>
       {/* <a href="/">Home</a> | <a href="/about">About</a> */}
     </nav>
   )  
