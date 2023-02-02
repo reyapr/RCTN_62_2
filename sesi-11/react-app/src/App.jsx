@@ -11,6 +11,12 @@ function App() {
   // componentdidmount -> fetchUser()
   return (
     <div >
+      <input type="text" />
+      <input type="text" />
+      <input type="text" />
+      <input type="text" />
+      <input type="text" />
+      <input type="text" />
       <Counter/>
       <hr />
       <Users/>

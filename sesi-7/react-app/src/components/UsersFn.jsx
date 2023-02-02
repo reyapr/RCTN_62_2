@@ -16,6 +16,7 @@ const UsersFn = () => {
     console.log('fn did mount')
     const unmount = () => {
       console.log('fn unmount')
+      localStorage.removeItem('user')
     }
     
     axios.get('https://jsonplaceholder.typicode.com/users')
