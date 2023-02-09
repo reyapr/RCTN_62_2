@@ -1,7 +1,11 @@
+import { useEffect, useState } from 'react';
 import { Button, Image, Platform, Text, View } from 'react-native';
 
 export default function App() {
   console.log(Platform.OS, '<==== OS')
+  
+  const [update,setUpdate] = useState(true)
+  
   return (
     <View style={styles.container}>
       <Image 
@@ -10,8 +14,8 @@ export default function App() {
         }}
         style={{ height: 200, width: 200 }}
       />
-      <Text style={styles.myText}>Hallo sayang, love you</Text>
-      <Button color='white'  title='Ini Text Buttona'/>
+      <Text style={styles.myText}>Hallo </Text>
+      <Button onPress={() => setUpdate(!update)} color='white'  title='Ini Text Bttona'/>
     </View>
   );
 }
